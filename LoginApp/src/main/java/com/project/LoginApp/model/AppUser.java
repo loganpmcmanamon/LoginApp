@@ -31,7 +31,7 @@ public class AppUser implements UserDetails {
     )
     private Long id;
     private String firstName;
-    private String LastName;
+    private String lastName;
     private String password;
     private String email;
     @Enumerated(EnumType.STRING)
@@ -41,23 +41,12 @@ public class AppUser implements UserDetails {
 
     public AppUser(String firstName, String lastName, String password, String email, AppUserRole appUserRole) {
         this.firstName = firstName;
-        this.LastName = lastName;
+        this.lastName = lastName;
         this.password = password;
         this.email = email;
         this.appUserRole = appUserRole;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return LastName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -95,4 +84,15 @@ public class AppUser implements UserDetails {
     public boolean isEnabled() {
         return enabled;
     }
+
+    public String getEmail(){return email;}
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
 }

@@ -15,13 +15,13 @@ import java.time.LocalDateTime;
 public class ConfirmationToken {
     @Id
     @SequenceGenerator(
-            name = "user_sequence",
-            sequenceName = "user_sequence",
+            name = "confirmation_token_sequence",
+            sequenceName = "confirmation_token_sequence",
             allocationSize = 1
     )
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "user_sequence"
+            generator = "confirmation_token_sequence"
     )
     private Long id;
     @Column(nullable = false)
